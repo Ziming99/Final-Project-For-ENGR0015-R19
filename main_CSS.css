@@ -14,9 +14,17 @@ li a:hover {
     color: #C2FF00;
 }
 
+.index_photos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .index_image {
-    width:300px;
+    margin-right: 20px;
+    width:150px;
     text-align:center;
     display:block;
-    float: none;
+    float: left;
 }
