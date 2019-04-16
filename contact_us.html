@@ -11,7 +11,7 @@
     
     <form action="mailto:zil44@pitt.edu?subject=Form%20From%20Final%20Project" method="post" enctype="text/plain">
         <!---->
-        <p>Name:<input type="text" name="user_name" placeholder="Please enter your name"></p>
+        <p>Name:<input type="text" name="user_name" id="user_name" placeholder="Please enter your name"></p>
         <!---->
         Introduce yourself
         <textarea rows="5" cols="25"></textarea>
@@ -43,13 +43,18 @@
             <option value="" ></option>
         </select>
         <!---->
-        <button name="reset">Reset</button>
-        <button name="submit">Submit</button>
+        <button name="reset" type="reset">Reset</button>
+        <button name="submit" type="submit">Submit</button>
     
     </form>
     <!---->
+    <p>Your name is<p id="output_name"></p></p>
+    You want to know more about <p> these/this </p>product: <p></p>
+    <!---->
     <script type="text/javascript">
+        var output_name = document.getElementsById('user_name').value; // Get username from form
         
+        document.getElementById('output_name').innerHTML;
     
     </script>
     
