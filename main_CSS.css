@@ -1,0 +1,34 @@
+@charset "UTF-8";
+/* CSS Document */
+/* This is the CSS file for all html in this project */
+
+a, u {
+    text-decoration: none;
+}
+
+.menu_bar_a_tag {
+    color: black;
+}
+
+li a:hover {
+    color: #C2FF00;
+}
+
+.index_photos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.index_image {
+    margin-right: 20px;
+    width:150px;
+    text-align:center;
+    display:block;
+    float: left;
+}
+
+.title {
+    color: red;
+}
