@@ -35,3 +35,4 @@ heading something other than black. This page should describe the fees for your 
 * Write the code using pico/nano, Wordpad/Notepad, Geany, or Visual Studio. You cannot use any web design software.
 * To be able to grade your web page, we must be able to find it. The only means we have of locating your team webpage is from your individual web page. Thus, add a link on your individual web page that points to this company web page.
 * Be creative 
+???
