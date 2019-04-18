@@ -86,29 +86,26 @@
             
             var name = document.getElementById('name');
             var text = document.getElementById('text_input');
-            var service = document.getElementByName('service').value;
-            var product = document.getELementByName('product').value;
+            var service = document.getElementsByName('service');
+            var product = document.getElementsByName('product');
+
             var wood = document.getElementById('wood_type');
             var treatment = document.getElementById('treatment');
-            
             if (service[0].checkd == true) {
-                document.getElementById('s1').innerHTML = service[0].value;
+                document.getElementById('output3').innerHTML = service[0].value;
             }
             else if (service[1].checked == true) {
-                document.getElementById('s2').innerHTML = service[1].value;
+                document.getElementById('output3').innerHTML = service[1].value;
             }
             else {
-                document.getElementById('s3').innerHTML = service[2].value;
+                document.getElementById('output3').innerHTML = service[2].value;
             }
             
-
             document.getElementById('output1').innerHTML = name.value;
             document.getElementById('output2').innerHTML = text.value;
-            document.getElementById('output3').innerHTML = service;
-            document.getElementById('output4').innerHTML = product;
+            document.getElementById('output4').innerHTML = product.value;
             document.getElementById('output5').innerHTML = wood;
             document.getElementById('output6').innerHTML = treatment;
-            
         }
     
     </script>
