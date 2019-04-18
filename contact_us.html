@@ -14,7 +14,7 @@
         
 		<!--simple input box-->
         
-		<p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name" required></p>
+		<p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name" pattern="[A-Za-z]" required></p>
         
 		<!-- text area -->
         
@@ -92,7 +92,7 @@
 	<script type="text/javascript">
         
         function R() {
-            /**/
+            
             var i = 0, checkBoxDisplay = '', addComma = 0, checkbox ='';// set variable to display checkbox
             /*grab input from form*/
             var name = document.getElementById('name');
@@ -101,10 +101,29 @@
             var product = document.getElementsByName('product');
             var wood = document.getElementById('wood_type');
             var treatment = document.getElementById('treatment');
-            
-            var vali1 = text.value;
+            /*form validation for input*/
+            var vali1 = name.value;
+            var vali2 = text.value;
+            var vali3 = vali1.length;
+            var vali4 = vali2.length;
             if (vali1 == '' || vali1 == null || vali1 == undefined) {
-                alert('Please fillout the form');
+                alert('Please fillout the form.');
+                return false;
+            }
+            else if (vali2 == '' || vali2 == null || vali2 == undefined) {
+                alert('Please fillout the form.');
+                return false;
+            }
+            else if (vali3 < 2) {
+                alert('Enter a real name.')
+                return false;
+            }
+            else if (!/^[a-zA-Z ]*$/g.test(vali1)) { 
+                alert('Enter a real name.')
+                return false;
+            }
+            else if (vali4 < 20) {
+                alert('Tell us more about you.')
                 return false;
             }
             else {
