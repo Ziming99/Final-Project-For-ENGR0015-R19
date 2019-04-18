@@ -10,26 +10,25 @@
 <body>
     <center><h2 class="title">Contact Us</h2></center>
     
-    <form action="mailto:zil44@pitt.edu?subject=data" method="post" enctype="text/plain" name="QAQ">
+    <form action="mailto:zil44@pitt.edu?subject=data" method="post" enctype="text/plain" name="QAQ" onSubmit="alert(submiting)">
+        
+        <!--hid element div-->
+        <div id="TAT" style="display: block;">
         
 		<!--simple input box-->
-        
 		<p><b>Name:</b><input type="text" name="user_name" id="name" placeholder="Please enter your name" required></p>
         
 		<!-- text area -->
-        
         <h3>Introduce yourself:</h3>
         <textarea rows="5" cols="25" name="text1" id="text_input" required></textarea>
         
 		<!-- Radio Type input-->
-        
 		<h3>Which service would you like to know more about? </h3>
         <p><input type="radio" name="service" id="s1" value="carpentry" >Carpentry</p>
         <p><input type="radio" name="service" id="s2" value="construction" >Construction</p>
         <p><input type="radio" name="service" id="s3" value="carpentry and construction" checked >Both</p>
         
 		<!--Code below for checkbox -->
-        
 		<h3>Which Product/Service would you like to know more about?</h3>
         <p><input type="checkbox" name="product" id="p1" value="Lumber Impounding" checked>Lumber Impounding</p>
         <p><input type="checkbox" name="product" id="p2" value="Sizing and Cutting of Lumber">Sizing and Cutting of Lumber</p>
@@ -38,7 +37,6 @@
         <p><input type="checkbox" name="product" id="p5" value="Building Furniture">Building Furniture</p>
         
 		<!-- Code for list present below -->
-		
         <h3>Type of woods </h3>
         <select  name="wood_type" id="wood_type">
             <option>Pine</option>
@@ -55,7 +53,6 @@
         </select>
         
 		<!-- Special treatment list more option code present -->
-        
 		<h3> Special treatment for your lumber </h3>
         <select name="" id="treatment">
             <option>Wood Surface Finish</option>
@@ -68,14 +65,15 @@
         <!-- Submit and reset buttons coded below-->
         <p>Please click "Check" then you can submit</p>
         
-		<button name="reset" type="reset" onClick="window.location.reload()" style="display: inline-block;"> Reset</button>
+		<!--form check-->
+        <button name="reset" type="reset" style="display: inline-block;"> Reset</button>
         <button onClick="R()" type="button" id="check" style="display: inline-block;">Check</button>
-        <button name="submit" type="submit" id="submitbutton" style="display: none" disabled>Submit</button>
+        <button name="submit" type="submit" id="submitbutton" onClick="S()" style="display: none" disabled>Submit</button>
+        </div>
+        <button name="reset" type="reset" id="reset" onClick="window.location.reload()" style="display: none;"> Reset</button>
         
-        
-		<!-- Verification of commitment -->
-        
-		</form>
+    </form>
+    
 
     <!--Form validatioon output-->
     <div id="display" style="display: none;">
@@ -165,7 +163,11 @@
             document.getElementById('output5').innerHTML = wood.value;
             document.getElementById('output6').innerHTML = treatment.value;
         }
-    
+        function S() {
+            document.getElementById('TAT').style.display = "none";//hid form to preven re-editing
+            document.getElementById('reset').style.display = "block";
+        }
+        
     </script>
 
     
