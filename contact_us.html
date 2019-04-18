@@ -10,28 +10,28 @@
 <body>
     <center><h2 class="title">Contact Us</h2></center>
     
-    <form action="mailto:zil44@pitt.edu" method="post" enctype="text/plain">
+    <form action="mailto:zil44@pitt.edu" method="post" enctype="text/plain" name="QAQ">
         
 		<!--simple input box-->
         
-		<p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name"></p>
+		<p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name" required></p>
         
 		<!-- text area -->
         
 		Introduce yourself
-        <textarea rows="5" cols="25" id="text_input"></textarea>
+        <textarea rows="5" cols="25" name="text1" id="text_input" required></textarea>
         
 		<!-- Radio Type input-->
         
 		<p>Which service would you like to know more about? </p>
         <p><input type="radio" name="service" id="s1" value="carpentry" >Carpentry</p>
         <p><input type="radio" name="service" id="s2" value="construction" >Construction</p>
-        <p><input type="radio" name="service" id="s3" value="both carpentry and construction" checked >Both</p>
+        <p><input type="radio" name="service" id="s3" value="carpentry and construction" checked >Both</p>
         
 		<!--Code below for checkbox -->
         
 		<p>Which Product/Service would you like to know more about?</p>
-        <p><input type="checkbox" name="product" id="p1" value="Lumber Impounding">Lumber Impounding</p>
+        <p><input type="checkbox" name="product" id="p1" value="Lumber Impounding" checked>Lumber Impounding</p>
         <p><input type="checkbox" name="product" id="p2" value="Sizing and Cutting of Lumber">Sizing and Cutting of Lumber</p>
         <p><input type="checkbox" name="product" id="p3" value="Millwork">Millwork</p>
         <p><input type="checkbox" name="product" id="p4" value="Housing Frames">Housing Frames</p>
@@ -74,24 +74,27 @@
         
 		</form>
     <button onClick="R()">Check your input</button>
-
-    <p>
-    Your name is:<span id="output1"></span><br>
-    Text:<span id="output2"></span><br>
-    Servise:<span id="output3"></span><br>
-    Product:<span id="output4"></span><br>
-    Woods:<span id="output5"></span><br>
-    Treatment:<span id="output6"></span><br>
-    </p>
+    
+    <div id="display" style="display: none;">
+        <p>
+            <b>Your name is: </b><span id="output1"></span> ;<br>
+            <b>This is your introduction: </b><br>
+            <span id="output2"></span><br>
+            <b>You wnat to know about our </b><span id="output3"></span> service.<br>
+            <b>And you want to know more about our following products </b><span id="output4"></span>.<br>
+            <b>This is your most interested woods: </b><span id="output5"></span>.<br>
+            <b>This is your most interested treatment: </b><span id="output6"></span>.<br>
+        </p>
+    </div>
 	
     <!-- Javascript code below -->
     
 	<script type="text/javascript">
         
         function R() {
-            
-            var i = 0, checkBoxDisplay = '', addComma = 0, checkbox ='';
-            
+            /**/
+            var i = 0, checkBoxDisplay = '', addComma = 0, checkbox ='';// set variable to display checkbox
+            /*grab input from form*/
             var name = document.getElementById('name');
             var text = document.getElementById('text_input');
             var service = document.getElementsByName('service');
@@ -99,6 +102,16 @@
             var wood = document.getElementById('wood_type');
             var treatment = document.getElementById('treatment');
             
+            var vali1 = text.value;
+            if (vali1 == '' || vali1 == null || vali1 == undefined) {
+                alert('Please fillout the form');
+                return false;
+            }
+            else {
+                document.getElementById('display').style.display = "block";
+            }
+
+            /*display radio button*/
             if (service[0].checkd == true) {
                 document.getElementById('output3').innerHTML = service[0].value;
             }
@@ -108,7 +121,7 @@
             else {
                 document.getElementById('output3').innerHTML = service[2].value;
             }
-            
+            /*display check box value with a loop*/
             while (i < product.length ){
                 if (product[i].checked == true) {
                     if (addComma == 1) {
@@ -121,8 +134,7 @@
             }
             i= 0;
             addComma =0;
-            
-            
+            /*send all data to HTML*/
             document.getElementById('output1').innerHTML = name.value;
             document.getElementById('output2').innerHTML = text.value;
             document.getElementById('output4').innerHTML = checkBoxDisplay;
