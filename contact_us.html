@@ -13,22 +13,28 @@
     <form action="mailto:zil44@pitt.edu" method="post" enctype="text/plain">
         <!--simple input box-->
         <p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name"></p>
-        <!--textarea-->
+        <!-- text area -->
         Introduce yourself
         <textarea rows="5" cols="25" id="text_input"></textarea>
-        <!-- Radio Type input-->
-        <p>Which service you want to know more about ? </p>
+        
+		<!-- Radio Type input-->
+        
+		<p>Which service you want to know more about ? </p>
         <p><input type="radio" name="service" id="s1" value="carpentry" >Carpentry</p>
         <p><input type="radio" name="service" id="s2" value="construction" >Construction</p>
         <p><input type="radio" name="service" id="s3" value="both carpentry and construction" >Both</p>
-        <!---->
-        <p>Which Product you want to know more about?</p>
+        
+		<!--Code below for checkbox -->
+        
+		<p>Which Product you want to know more about?</p>
         <p><input type="checkbox" name="product" id="p1" value="Lumber Impounding">Lumber Impounding</p>
         <p><input type="checkbox" name="product" id="p2" value="Sizing and Cutting of Lumber">Sizing and Cutting of Lumber</p>
         <p><input type="checkbox" name="product" id="p3" value="Millwork">Millwork</p>
         <p><input type="checkbox" name="product" id="p4" value="Housing Frames">Housing Frames</p>
         <p><input type="checkbox" name="product" id="p5" value="Building Furniture">Building Furniture</p>
-        <!---->
+        
+		<!-- Code for list present below -->
+		
         <h5>Type of woods </h5>
         <select  name="wood_type" id="wood_type">
             <option>Pine</option>
@@ -43,8 +49,8 @@
             <option>Walnut</option>
             
         </select>
-        <!---->
-        <h5> Special treatment to your woodwork </h5>
+        <!-- Special treatment list more option code present -->
+        <h5> Special treatment for your lumber </h5>
         <select name="" id="treatment">
             <option>Wood Relief on surface</option>
             <option>Spray painting</option>
@@ -52,11 +58,15 @@
             <option>Coating on surface</option>
             <option>Mortise and Tenon technic</option>
         </select>
-        <!---->
-        <button name="reset" type="reset">Reset</button>
+		
+        <!-- Submit and reset buttons coded below-->
+        
+		<button name="reset" type="reset">Reset</button>
         <button name="submit" type="submit">Submit</button>
-        <!---->
-        </form>
+        
+		<!-- Verification of commitment -->
+        
+		</form>
     <button onClick="R()">Check your input</button>
 
     <p>
@@ -67,8 +77,10 @@
     <span id="output5"></span>
     <span id="output6"></span>
     </p>
-    <!---->
-    <script type="text/javascript">
+	
+    <!-- Javascript code below -->
+    
+	<script type="text/javascript">
         
         function R() {
             
