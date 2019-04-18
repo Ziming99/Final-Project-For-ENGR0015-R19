@@ -2,6 +2,10 @@
 /* CSS Document */
 /* This is the CSS file for all html in this project */
 
+body {
+    background-color: tan;
+}
+
 a, u {
     text-decoration: none;
 }
