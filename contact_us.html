@@ -14,7 +14,7 @@
         
 		<!--simple input box-->
         
-		<p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name" pattern="[A-Za-z]" required></p>
+		<p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name" required></p>
         
 		<!-- text area -->
         
@@ -66,15 +66,17 @@
         </select>
 		
         <!-- Submit and reset buttons coded below-->
+        <p>Please click "Check" before you submit</p>
+		<button name="reset" type="reset" onClick="window.location.reload()">Reset</button>
+        <button onClick="R()" type="button" id="check" style="display: block">Check</button>
+        <button name="submit" type="submit" id="submitbutton" style="display: none" disabled>Submit</button>
         
-		<button name="reset" type="reset">Reset</button>
-        <button name="submit" type="submit">Submit</button>
         
 		<!-- Verification of commitment -->
         
 		</form>
-    <button onClick="R()">Check your input</button>
-    
+
+    <!--Form validatioon output-->
     <div id="display" style="display: none;">
         <p>
             <b>Your name is: </b><span id="output1"></span> ;<br>
@@ -86,9 +88,7 @@
             <b>This is your most interested treatment: </b><span id="output6"></span>.<br>
         </p>
     </div>
-	
     <!-- Javascript code below -->
-    
 	<script type="text/javascript">
         
         function R() {
@@ -106,28 +106,32 @@
             var vali2 = text.value;
             var vali3 = vali1.length;
             var vali4 = vali2.length;
-            if (vali1 == '' || vali1 == null || vali1 == undefined) {
-                alert('Please fillout the form.');
+            
+            if (vali1 == '' || vali1 == null || vali1 == undefined) { 
+                alert('Please fillout the form.');//check if the name = null
                 return false;
             }
-            else if (vali2 == '' || vali2 == null || vali2 == undefined) {
-                alert('Please fillout the form.');
+            else if (vali2 == '' || vali2 == null || vali2 == undefined) { 
+                alert('Please fillout the form.');//check if text = null 
                 return false;
             }
-            else if (vali3 < 2) {
-                alert('Enter a real name.')
+            else if (vali3 < 2 || vali3 > 50 ) {
+                alert('Enter a real name.');//limit the length of the name input from 2 to 50
                 return false;
             }
             else if (!/^[a-zA-Z ]*$/g.test(vali1)) { 
-                alert('Enter a real name.')
+                alert('Enter a real name.');//limit name only to space and letters
                 return false;
             }
             else if (vali4 < 20) {
-                alert('Tell us more about you.')
+                alert('Tell us more about you.') // ask to write more, I want to say 300 words
                 return false;
             }
             else {
-                document.getElementById('display').style.display = "block";
+                document.getElementById('display').style.display = "block";//display paragrah
+                document.getElementById('submitbutton').disabled = false;//enable submit button
+                document.getElementById('check').style.display = "none";//hide check button
+                document.getElementById('submitbutton').style.display = "block";//display submit button
             }
 
             /*display radio button*/
@@ -153,7 +157,7 @@
             }
             i= 0;
             addComma =0;
-            /*send all data to HTML*/
+            /*send data to HTML*/
             document.getElementById('output1').innerHTML = name.value;
             document.getElementById('output2').innerHTML = text.value;
             document.getElementById('output4').innerHTML = checkBoxDisplay;
