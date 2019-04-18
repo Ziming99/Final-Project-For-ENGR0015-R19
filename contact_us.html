@@ -18,56 +18,87 @@
         <textarea rows="5" cols="25" id="text_input"></textarea>
         <!-- Radio Type input-->
         <p>Which service you want to know more about ? </p>
-        <p><input type="radio" name="service" value="carpentry">Carpentry</p>
-        <p><input type="radio" name="service" value="construction">Construction</p>
-        <p><input type="radio" name="service" value="both">Both</p>
+        <p><input type="radio" name="service" id="s1" value="carpentry" >Carpentry</p>
+        <p><input type="radio" name="service" id="s2" value="construction" >Construction</p>
+        <p><input type="radio" name="service" id="s3" value="both carpentry and construction" >Both</p>
         <!---->
         <p>Which Product you want to know more about?</p>
-        <p><input type="checkbox" name="product" value="Lumber Impounding">Lumber Impounding</p>
-        <p><input type="checkbox" name="product" value="Sizing and Cutting of Lumber">Sizing and Cutting of Lumber</p>
-        <p><input type="checkbox" name="product" value="Millwork">Millwork</p>
-        <p><input type="checkbox" name="product" value="Housing Frames">Housing Frames</p>
-        <p><input type="checkbox" name="product" value="Building Furniture">Building Furniture</p>
+        <p><input type="checkbox" name="product" id="p1" value="Lumber Impounding">Lumber Impounding</p>
+        <p><input type="checkbox" name="product" id="p2" value="Sizing and Cutting of Lumber">Sizing and Cutting of Lumber</p>
+        <p><input type="checkbox" name="product" id="p3" value="Millwork">Millwork</p>
+        <p><input type="checkbox" name="product" id="p4" value="Housing Frames">Housing Frames</p>
+        <p><input type="checkbox" name="product" id="p5" value="Building Furniture">Building Furniture</p>
         <!---->
-        <select id="" name="">
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
-            <option value=""></option>
+        <h5>Type of woods </h5>
+        <select  name="" id="wood_type">
+            <option>Pine</option>
+            <option>Cedar</option>
+            <option>Fir</option>
+            <option>Oak</option>
+            <option>Hardwoods</option>
+            <option>Ash</option>
+            <option>Beech</option>
+            <option>Elm</option>
+            <option>Mahogany</option>
+            <option>Teak</option>
+            <option>Walnuut</option>
+            
         </select>
         <!---->
-        <select id="" name="">
-            <option value="" ></option>
-            <option value="" ></option>
-            <option value="" ></option>
-            <option value="" ></option>
-            <option value="" ></option>
+        <h5> Special treatment to your woodwork </h5>
+        <select name="" id="treatment">
+            <option>Wood Relief on surface</option>
+            <option>Spray painting</option>
+            <option>bursh painting</option>
+            <option>Coating on surface</option>
+            <option>Mortise and Tenon technic</option>
         </select>
+        <!---->
         <!---->
         <button name="reset" type="reset">Reset</button>
         <button name="submit" type="submit" onClick="ReturnHTML()">Submit</button>
     
     </form>
     <!---->
-    <p id="output"></p>
+    
+    
+    
+    <span id="output1"></span>
+    <span id="output2"></span>
+    <span id="output3"></span>
+    <span id="output4"></span>
+    <span id="output5"></span>
+    <span id="output6"></span>
     <!---->
     <script type="text/javascript">
+        
         function ReturnHTML() {
             var name = document.getELementById('user_name').value;
-            return 'Your name is ' + name + '.<br>'
-            
             var text = document.getElementById('text_input');
-            return '<h6> This is your introduction to us </h6><br><p>' + text +'</p><br>';
-            
             var service = document.getElementByName('service').value;
-            return 'You want to know more about our ' + service '<br>';
-            
             var product = document.getELementByName('product').value;
-            return 'And you want to know more about ' + product;
+            var wood = document.getElementById('wood_type');
+            var treatment = document.getElementById('treatment');
+            
+            if (service[0].checkd == true) {
+                document.getElementById('').innerHTML = service[0].value;
+            }
+            else if (service[1].checked == true) {
+                document.getElementById('').innerHTML = service[1].value;
+            }
+            else {
+                document.getElementById('').innerHTML = service[2].value;
+            }
+            
+            
+            document.getElementById('output1').innerHTML = name;
+            document.getElementById('output2').innerHTML = text;
+            document.getElementById('output3').innerHTML = service;
+            document.getElementById('output4').innerHTML = product;
+            document.getElementById('output5').innerHTML = wood;
+            document.getElementById('output6').innerHTML = treatment;
             
         }
-        document.getElementById('output').innerHTML = ReturnHTML();
     
     </script>
     
