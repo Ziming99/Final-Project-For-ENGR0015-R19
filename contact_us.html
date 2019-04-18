@@ -22,7 +22,7 @@
 		<p>Which service you want to know more about ? </p>
         <p><input type="radio" name="service" id="s1" value="carpentry" >Carpentry</p>
         <p><input type="radio" name="service" id="s2" value="construction" >Construction</p>
-        <p><input type="radio" name="service" id="s3" value="both carpentry and construction" >Both</p>
+        <p><input type="radio" name="service" id="s3" value="both carpentry and construction" checked >Both</p>
         
 		<!--Code below for checkbox -->
         
@@ -70,12 +70,12 @@
     <button onClick="R()">Check your input</button>
 
     <p>
-    <span id="output1"></span>
-    <span id="output2"></span>
-    <span id="output3"></span>
-    <span id="output4"></span>
-    <span id="output5"></span>
-    <span id="output6"></span>
+    Your name is:<span id="output1"></span><br>
+    Text:<span id="output2"></span><br>
+    Servise:<span id="output3"></span><br>
+    Product:<span id="output4"></span><br>
+    Woods:<span id="output5"></span><br>
+    Treatment:<span id="output6"></span><br>
     </p>
 	
     <!-- Javascript code below -->
@@ -84,13 +84,15 @@
         
         function R() {
             
+            var i = 0, checkBoxDisplay = '', addComma = 0, checkbox ='';
+            
             var name = document.getElementById('name');
             var text = document.getElementById('text_input');
             var service = document.getElementsByName('service');
             var product = document.getElementsByName('product');
-
             var wood = document.getElementById('wood_type');
             var treatment = document.getElementById('treatment');
+            
             if (service[0].checkd == true) {
                 document.getElementById('output3').innerHTML = service[0].value;
             }
@@ -101,11 +103,25 @@
                 document.getElementById('output3').innerHTML = service[2].value;
             }
             
+            while (i < product.length ){
+                if (product[i].checked == true) {
+                    if (addComma == 1) {
+                        checkBoxDisplay = checkBoxDisplay + ', ';
+                    }
+                    checkBoxDisplay = checkBoxDisplay + product[i].value;
+                    addComma = 1;
+                }
+                i=i+1;
+            }
+            i= 0;
+            addComma =0;
+            
+            
             document.getElementById('output1').innerHTML = name.value;
             document.getElementById('output2').innerHTML = text.value;
-            document.getElementById('output4').innerHTML = product.value;
-            document.getElementById('output5').innerHTML = wood;
-            document.getElementById('output6').innerHTML = treatment;
+            document.getElementById('output4').innerHTML = checkBoxDisplay;
+            document.getElementById('output5').innerHTML = wood.value;
+            document.getElementById('output6').innerHTML = treatment.value;
         }
     
     </script>
