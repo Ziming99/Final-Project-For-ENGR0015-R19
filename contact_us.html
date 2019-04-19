@@ -89,7 +89,7 @@
     </div>
     <!-- Javascript code below -->
 	<script type="text/javascript">
-        
+                
         function R() {
             
             var i = 0, checkBoxDisplay = '', addComma = 0, checkbox ='';// set variable to display checkbox
@@ -105,25 +105,36 @@
             var vali2 = text.value;
             var vali3 = vali1.length;
             var vali4 = vali2.length;
+            var vali5 = false;
+            
+            for(var x=0,l=product.length;x<l;x++){
+                if (product[x].checked){
+                    vali5 = true;
+                }
+            }
             
             if (vali1 == '' || vali1 == null || vali1 == undefined) { 
-                alert('Please fillout the form.');//check if the name = null
-                return false;
-            }
-            else if (vali2 == '' || vali2 == null || vali2 == undefined) { 
-                alert('Please fillout the form.');//check if text = null 
+                alert('Please enter your name.');//check if the name = null
                 return false;
             }
             else if (vali3 < 2 || vali3 > 50 ) {
-                alert('Enter a real name.');//limit the length of the name input from 2 to 50
+                alert('Please enter a real name, not a letter, or an essay');//limit the length of the name input from 2 to 50
                 return false;
             }
             else if (!/^[a-zA-Z ]*$/g.test(vali1)) { 
-                alert('Enter a real name.');//limit name only to space and letters
+                alert('Enter a real name, which not contain number, use i to replace numebr, eg: Abdullah ii');//limit name only to space and letters
+                return false;
+            }
+            else if (vali2 == '' || vali2 == null || vali2 == undefined) { 
+                alert('Please introduce yourself.');//check if text = null 
                 return false;
             }
             else if (vali4 < 20) {
                 alert('Tell us more about you.') // ask to write more, I want to say 300 words
+                return false;
+            }
+            else if (vali5 == false) { 
+                alert('Please choose a product.') // ask to check at least one box
                 return false;
             }
             else {
@@ -143,6 +154,7 @@
             else {
                 document.getElementById('output3').innerHTML = service[2].value;
             }
+            
             /*display check box value with a loop*/
             while (i < product.length ){
                 if (product[i].checked == true) {
@@ -156,6 +168,7 @@
             }
             i= 0;
             addComma =0;
+
             /*send data to HTML*/
             document.getElementById('output1').innerHTML = name.value;
             document.getElementById('output2').innerHTML = text.value;
@@ -163,8 +176,9 @@
             document.getElementById('output5').innerHTML = wood.value;
             document.getElementById('output6').innerHTML = treatment.value;
         }
+        
         function S() {
-            document.getElementById('TAT').style.display = "none";//hid form to preven re-editing
+            document.getElementById('TAT').style.display = "none";//hide form to preven re-editing
             document.getElementById('reset').style.display = "block";
         }
         
