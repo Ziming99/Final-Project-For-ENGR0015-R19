@@ -5,9 +5,13 @@
 body {
     background-color: tan;
 }
+<<<<<<< HEAD
 
 
 
+=======
+/*change color when hover on links in menu bar*/
+>>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
 .menu_bar_a_tag {
     color: black;
 }
@@ -15,7 +19,11 @@ body {
 li a:hover {
     color: #C2FF00;
 }
+<<<<<<< HEAD
 
+=======
+/*change the img setting*/
+>>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
 .index_photos {
     display: block;
     margin-left: auto;
