@@ -10,31 +10,7 @@
 <body>
     <center><h2 class="title">Contact Us</h2></center>
     
-<<<<<<< HEAD
-    <form action="mailto:zil44@pitt.edu" method="post" enctype="text/plain">
-        
-		<!--simple input box-->
-        
-		<p>Name:<input type="text" name="user_name" id="name" placeholder="Please enter your name"></p>
-        
-		<!-- text area -->
-        
-		Introduce yourself
-        <textarea rows="5" cols="25" id="text_input"></textarea>
-        
-		<!-- Radio Type input-->
-        
-		<p>Which service would you like to know more about? </p>
-        <p><input type="radio" name="service" id="s1" value="carpentry" >Carpentry</p>
-        <p><input type="radio" name="service" id="s2" value="construction" >Construction</p>
-        <p><input type="radio" name="service" id="s3" value="both carpentry and construction" >Both</p>
-        
-		<!--Code below for checkbox -->
-        
-		<p>Which Product/Service would you like to know more about?</p>
-        <p><input type="checkbox" name="product" id="p1" value="Lumber Impounding">Lumber Impounding</p>
-=======
-    <form action="mailto:zil44@pitt.edu?subject=data" method="post" enctype="text/plain" name="QAQ">
+    <form action="mailto:zil44@pitt.edu?subject=data" method="post" enctype="text/plain" name="QAQ" onSubmit="alert(submiting)">
         
         <!--hid element div-->
         <div id="TAT" style="display: block;">
@@ -50,24 +26,18 @@
 		<h3>Which service would you like to know more about? </h3>
         <p><input type="radio" name="service" id="s1" value="carpentry" >Carpentry</p>
         <p><input type="radio" name="service" id="s2" value="construction" >Construction</p>
-        <p><input type="radio" name="service" id="s3" value="carpentry and construction" checked>Both</p>
+        <p><input type="radio" name="service" id="s3" value="carpentry and construction" checked >Both</p>
         
 		<!--Code below for checkbox -->
 		<h3>Which Product/Service would you like to know more about?</h3>
         <p><input type="checkbox" name="product" id="p1" value="Lumber Impounding" checked>Lumber Impounding</p>
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
         <p><input type="checkbox" name="product" id="p2" value="Sizing and Cutting of Lumber">Sizing and Cutting of Lumber</p>
         <p><input type="checkbox" name="product" id="p3" value="Millwork">Millwork</p>
         <p><input type="checkbox" name="product" id="p4" value="Housing Frames">Housing Frames</p>
         <p><input type="checkbox" name="product" id="p5" value="Building Furniture">Building Furniture</p>
         
 		<!-- Code for list present below -->
-<<<<<<< HEAD
-		
-        <h5>Type of woods </h5>
-=======
         <h3>Type of woods </h3>
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
         <select  name="wood_type" id="wood_type">
             <option>Pine</option>
             <option>Cedar</option>
@@ -83,12 +53,7 @@
         </select>
         
 		<!-- Special treatment list more option code present -->
-<<<<<<< HEAD
-        
-		<h5> Special treatment for your lumber </h5>
-=======
 		<h3> Special treatment for your lumber </h3>
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
         <select name="" id="treatment">
             <option>Wood Surface Finish</option>
             <option>Spray painting</option>
@@ -98,32 +63,10 @@
         </select>
 		
         <!-- Submit and reset buttons coded below-->
-<<<<<<< HEAD
-        
-		<button name="reset" type="reset">Reset</button>
-        <button name="submit" type="submit">Submit</button>
-        
-		<!-- Verification of commitment -->
-        
-		</form>
-    <button onClick="R()">Check your input</button>
-
-    <p>
-    <span id="output1"></span>
-    <span id="output2"></span>
-    <span id="output3"></span>
-    <span id="output4"></span>
-    <span id="output5"></span>
-    <span id="output6"></span>
-    </p>
-	
-    <!-- Javascript code below -->
-    
-=======
         <p>Please click "Check" then you can submit</p>
         
 		<!--form check-->
-        <button name="reset" type="reset" onClick="window.location.reload()" style="display: inline-block;"> Reset</button>
+        <button name="reset" type="reset" style="display: inline-block;"> Reset</button>
         <button onClick="R()" type="button" id="check" style="display: inline-block;">Check</button>
         <button name="submit" type="submit" id="submitbutton" onClick="S()" style="display: none" disabled>Submit</button>
         </div>
@@ -145,25 +88,16 @@
         </p>
     </div>
     <!-- Javascript code below -->
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
 	<script type="text/javascript">
         
         function R() {
             
-<<<<<<< HEAD
-=======
             var i = 0, checkBoxDisplay = '', addComma = 0, checkbox ='';// set variable to display checkbox
             /*grab input from form*/
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
             var name = document.getElementById('name');
             var text = document.getElementById('text_input');
             var service = document.getElementsByName('service');
             var product = document.getElementsByName('product');
-<<<<<<< HEAD
-
-            var wood = document.getElementById('wood_type');
-            var treatment = document.getElementById('treatment');
-=======
             var wood = document.getElementById('wood_type');
             var treatment = document.getElementById('treatment');
             /*form validation for input*/
@@ -171,36 +105,25 @@
             var vali2 = text.value;
             var vali3 = vali1.length;
             var vali4 = vali2.length;
-            var vali5 = false;
-            
-            for(var x=0,l=product.length;x<l;x++){
-                if (product[x].checked){
-                    vali5 = true;
-                }
-            }
             
             if (vali1 == '' || vali1 == null || vali1 == undefined) { 
-                alert('Please enter your name.');//check if the name = null
-                return false;
-            }
-            else if (vali3 < 2 || vali3 > 50 ) {
-                alert('Please enter a real name, not a letter, or an essay');//limit the length of the name input from 2 to 50
-                return false;
-            }
-            else if (!/^[a-zA-Z ]*$/g.test(vali1)) { 
-                alert('Enter a real name, which not contain number, use i to replace numebr, eg: Abdullah ii');//limit name only to space and letters
+                alert('Please fillout the form.');//check if the name = null
                 return false;
             }
             else if (vali2 == '' || vali2 == null || vali2 == undefined) { 
-                alert('Please introduce yourself.');//check if text = null 
+                alert('Please fillout the form.');//check if text = null 
+                return false;
+            }
+            else if (vali3 < 2 || vali3 > 50 ) {
+                alert('Enter a real name.');//limit the length of the name input from 2 to 50
+                return false;
+            }
+            else if (!/^[a-zA-Z ]*$/g.test(vali1)) { 
+                alert('Enter a real name.');//limit name only to space and letters
                 return false;
             }
             else if (vali4 < 20) {
                 alert('Tell us more about you.') // ask to write more, I want to say 300 words
-                return false;
-            }
-            else if (vali5 == false) { 
-                alert('Please choose a product.') // ask to check at least one box
                 return false;
             }
             else {
@@ -211,7 +134,6 @@
             }
 
             /*display radio button*/
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
             if (service[0].checkd == true) {
                 document.getElementById('output3').innerHTML = service[0].value;
             }
@@ -221,16 +143,6 @@
             else {
                 document.getElementById('output3').innerHTML = service[2].value;
             }
-            
-<<<<<<< HEAD
-            document.getElementById('output1').innerHTML = name.value;
-            document.getElementById('output2').innerHTML = text.value;
-            document.getElementById('output4').innerHTML = product.value;
-            document.getElementById('output5').innerHTML = wood;
-            document.getElementById('output6').innerHTML = treatment;
-        }
-    
-=======
             /*display check box value with a loop*/
             while (i < product.length ){
                 if (product[i].checked == true) {
@@ -244,7 +156,6 @@
             }
             i= 0;
             addComma =0;
-
             /*send data to HTML*/
             document.getElementById('output1').innerHTML = name.value;
             document.getElementById('output2').innerHTML = text.value;
@@ -252,13 +163,11 @@
             document.getElementById('output5').innerHTML = wood.value;
             document.getElementById('output6').innerHTML = treatment.value;
         }
-        
         function S() {
-            document.getElementById('TAT').style.display = "none";//hide form to preven re-editing
+            document.getElementById('TAT').style.display = "none";//hid form to preven re-editing
             document.getElementById('reset').style.display = "block";
         }
         
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
     </script>
 
     

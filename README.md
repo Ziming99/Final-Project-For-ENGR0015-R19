@@ -1,14 +1,8 @@
 # Project info
 ***
-<<<<<<< HEAD
     This is the list of what should be in this project. 
     Due : April 19th
     
-=======
-    This is the list of what should be in this project.
-    Due : April 19th
-
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
 ## Files: 1(frameset) + 1(header)+ 1(menu bar)+ 6(main body)= 9 html files
 ### `Main Frame page`
 ### `header`
@@ -40,8 +34,4 @@ heading something other than black. This page should describe the fees for your 
 * In every document, include comment lines that separate the text and explain what material is going to be presented. Include proper indenting between the start and end tags.
 * Write the code using pico/nano, Wordpad/Notepad, Geany, or Visual Studio. You cannot use any web design software.
 * To be able to grade your web page, we must be able to find it. The only means we have of locating your team webpage is from your individual web page. Thus, add a link on your individual web page that points to this company web page.
-<<<<<<< HEAD
 * Be creative 
-=======
-* Be creative
->>>>>>> d0e1d10a46d90a891dd02681a64bb8a5ef3ce789
